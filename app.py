@@ -126,7 +126,7 @@ with st.sidebar:
         if st.button("Add Field ➕"):
             st.session_state.schema_fields.append({"name": "", "type": "str"})
 
-# Chat interface
+
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
@@ -153,10 +153,10 @@ if prompt := st.chat_input("Ask about the website..."):
                         
                     data = app.extract(
                         [website_url],
-                        extract_params
+                        params = extract_params
                     )
                     print(data)
-                    # check if data['data'] is a list, if yes, pass data['data'] to convert_to_table
+                    
                     if isinstance(data['data'], list):
                         table = convert_to_table(data['data'])
                     else:
