@@ -1,3 +1,4 @@
 firecrawl
 python-dotenv
 pandas
+streamlit
